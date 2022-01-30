@@ -1,0 +1,17 @@
+﻿@using SportStoreApplication.Models;
+
+<section class="container-items">
+    @foreach (Shoe item in Model)
+    {
+        if (item.IsSale != false)
+        {
+            <div id="cards-div">
+                <img src="@item.Picture" style="width:250px;width:250px"/>
+                <h1>type:@item.ShoeType</h1>
+                <h1>brand:@item.Company</h1>
+                <h1>price:@item.Price</h1>
+            </div>
+        }
+    }
+</section>
+

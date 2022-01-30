@@ -1,0 +1,23 @@
+﻿@using SportStoreApplication.Models;
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("ShowPants", "Pants", new {Type = "ShortPants"})'">Click For All Short Shirts </button>
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("ShowPants", "Pants", new {Type = "LongSPants"})'">Click For Long Sleeves </button>
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("ShowPants", "Pants", new {Type = "DryFit"})'">Click For All Dry-Fit </button>
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("ShowPants", "Pants", new {Type = "SortedByLowerToHigher"})'">For Items Sorted Lower To Higher </button>
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("ShowPants", "Pants", new {Type = "SortedByHigherToLower"})'">For Items Sorted Higher To Lower</button>
+<section class="container-items">
+    @foreach (Clothe item in Model)
+    {
+        <div class="DitailsDiv">
+            <img src="@item.Picture" style="width:250px;height:350px" />
+            <h3>@item.TypeOfCloth</h3>
+            <h3>@item.Company</h3>
+            <h4>price:@item.Price</h4>
+            <b><hr /></b>
+            <h1></h1>
+        </div>
+    }
+</section>
+<button>
+    @Html.ActionLink("Manager", "ManagerShow", "Pants");
+</button>
+

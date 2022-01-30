@@ -1,0 +1,22 @@
+﻿@using SportStoreApplication.Models;
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("Equipment", "SportsEquipment", new {Type = "Football"})'">Fot FootBall Items </button>
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("Equipment", "SportsEquipment", new {Type = "BasketBall"})'">For BasketBall Items </button>
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("Equipment", "SportsEquipment", new {Type = "SortedByLowToHigher"})'">For Items Sorted Lower To Higher </button>
+<button type="button" class="btn btn-primary btn-md" onclick="location.href='@Url.Action("Equipment", "SportsEquipment", new {Type = "SortedByHigherToLow"})'">For Items Sorted Higher To Lower </button>
+
+
+<section class="container-items">
+    @foreach (SportsEquipment item in Model)
+    {
+        <div class="DitailsDiv">
+            <img src="@item.Picture" style="width:250px;width:250px" />
+            <h3>@item.Category</h3>
+            <h3>@item.Company</h3>
+            <h4>price:@item.Price</h4>
+            <h1></h1>
+        </div>
+    }
+    </section>
+    <button>
+        @Html.ActionLink("Manager", "EquipmentManagerShow", "SportsEquipment")
+    </button>

@@ -1,0 +1,34 @@
+﻿@using SportStoreApplication.Models;
+<button>
+    @Html.ActionLink("admin", "ManagerShow", "Shoes");
+</button>
+
+<button>
+    @Html.ActionLink("Sales", "SalesShow", "Shoes");
+</button>
+<section class="container-items">
+        @foreach (Shoe item in Model)
+        {
+            <div class="DitailsDiv">
+                <img src="@item.Picture" style="width:250px;width:250px" />
+                <h3>@item.ShoeType</h3>
+                <h3>@item.Company</h3>
+                <h4>price:@item.Price</h4>
+            </div>
+        }
+</section>
+@*<button>
+    @Html.ActionLink("Manager", "ManagerShow", "Shoes");
+</button>*@
+
+
+
+
+
+
+
+
+
+
+
+

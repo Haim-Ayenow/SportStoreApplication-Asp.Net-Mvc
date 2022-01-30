@@ -1,0 +1,33 @@
+﻿@using SportStoreApplication.Models;
+
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>ShoeType</th>
+        <th>Company</th>
+        <th>Brand</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>IsSale</th>
+        <th>Picture</th>
+    </tr>
+    @foreach (Shoe item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.ShoeType</td>
+            <td>@item.Company</td>
+            <td>@item.Brand</td>
+            <td>@item.Price</td>
+            <td>@item.Amount</td>
+            <td>@item.IsSale</td>
+            <td><img src="@item.Picture" style="width:200px" ; /></td>
+        </tr>
+    }
+
+</table>
+<button>
+    @Html.ActionLink("Shoes", "ShowShoes", "Shoes");
+</button>
+<h2>ManagerShow</h2>
